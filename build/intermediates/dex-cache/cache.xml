@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/libs/internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-addb8f916ff676f8683c1bd037d1baf07dfa84a3.jar" />
+    </item>
+    <item
+        jar="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/pre-dexed/debug/classes-cd0f3529579368f498ce7da9f1b11e61069642ab.jar" />
+    </item>
+    <item
+        jar="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/pre-dexed/debug/classes-dbfbada5a3214bc18fc73dd6aa21f8000c650487.jar" />
+    </item>
+    <item
+        jar="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/exploded-aar/McMultiplayer/viewpagerindicator/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="39a653e377eb4bf11188b9d86551dc704c617744">
+        <dex dex="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/pre-dexed/debug/classes-b6141d10c3fd21ff90314cb1b3ca5d7b620c2594.jar" />
+    </item>
+    <item
+        jar="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/exploded-aar/McMultiplayer/pulltorefresh/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="93cb781fb5cafab003223cc887b28e5795327ef6">
+        <dex dex="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/pre-dexed/debug/classes-16101171b0385c2465acafb1e4955368dd99499d.jar" />
+    </item>
+    <item
+        jar="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/exploded-aar/McMultiplayer/pulltorefresh/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="524819a27eb839f4e3fd4d8ec22cf8d7810b72a6">
+        <dex dex="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/pre-dexed/debug/classes-16101171b0385c2465acafb1e4955368dd99499d.jar" />
+    </item>
+    <item
+        jar="/Users/luoweiyi/Andriod/sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-fd0fe5d42e5f4b190b4f3914747642ab26159331.jar" />
+    </item>
+    <item
+        jar="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/exploded-aar/McMultiplayer/viewpagerindicator/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dda57b8eac190d34c4e6a39880b74b74ad2dfa6b">
+        <dex dex="/Users/luoweiyi/AndroidStudioProjects/McMultiplayer/app/build/intermediates/pre-dexed/debug/classes-b6141d10c3fd21ff90314cb1b3ca5d7b620c2594.jar" />
+    </item>
+
+</items>
