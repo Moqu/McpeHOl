@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.mclauncher.peonlinebox.mcmultiplayer.MobileActivity;
 import com.mclauncher.peonlinebox.mcmultiplayer.OnFragmentInteractionListener;
 import com.mclauncher.peonlinebox.mcmultiplayer.R;
+import com.mclauncher.peonlinebox.mcmultiplayer.RegisterActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,10 +39,10 @@ public class PersonalFragment extends Fragment {
     private String mParam2;
 
     ImageView iv_personal;
-    LinearLayout linear_login,linear_name;
-    Button btn_login,btn_register;
+    LinearLayout linear_login, linear_name;
+    Button btn_login, btn_register;
     TextView tv_nick;
-    RelativeLayout relative_myServer,relative_feedback,relative_version_update,relative_about,relative_logout;
+    RelativeLayout relative_myServer, relative_feedback, relative_version_update, relative_about, relative_logout;
 
     private OnFragmentInteractionListener mListener;
 
@@ -78,7 +79,7 @@ public class PersonalFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view =inflater.inflate(R.layout.fragment_personal, container, false);
+        View view = inflater.inflate(R.layout.fragment_personal, container, false);
         return view;
 
     }
@@ -154,28 +155,29 @@ public class PersonalFragment extends Fragment {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.btn_login:
-                    Toast.makeText(getActivity(),"登录成功",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "登录成功", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.btn_register:
-                    Toast.makeText(getActivity(),"注册成功",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "注册成功", Toast.LENGTH_SHORT).show();
+                    Intent registerIntent = new Intent(getActivity(), RegisterActivity.class);
+                    startActivity(registerIntent);
                     break;
                 case R.id.relative_myServer:
-                    Toast.makeText(getActivity(),"My服务器",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "My服务器", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.relative_feedback:
-                    Toast.makeText(getActivity(),"反馈建议",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "反馈建议", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.relative_version_update:
-                    Toast.makeText(getActivity(),"版本更新",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "版本更新", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.relative_about:
-                    Toast.makeText(getActivity(),"关于我们",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "关于我们", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.relative_logout:
                     Toast.makeText(getActivity(), "注销登录", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getActivity(), MobileActivity.class);
-                    startActivity(intent);
-                    
+                    Intent mobileIntent = new Intent(getActivity(), MobileActivity.class);
+                    startActivity(mobileIntent);
                     break;
             }
         }

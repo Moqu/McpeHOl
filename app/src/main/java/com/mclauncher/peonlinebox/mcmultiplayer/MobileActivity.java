@@ -84,12 +84,11 @@ public class MobileActivity extends ActionBarActivity implements ActionBar.TabLi
         }
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_mobile, menu);
-        SearchView searchView = (SearchView) menu.findItem(R.id.serverSeek).getActionView();
+        SearchView searchView = (SearchView) menu.findItem(R.id.serverSearch).getActionView();
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -108,6 +107,11 @@ public class MobileActivity extends ActionBarActivity implements ActionBar.TabLi
                 break;
             case R.id.serverCreate:
                 Toast.makeText(this,"创建",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.serverSearch:
+                break;
+            case R.id.serverRefresh:
+
                 break;
         }
 

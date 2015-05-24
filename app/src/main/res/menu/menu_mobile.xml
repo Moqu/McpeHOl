@@ -8,11 +8,11 @@
     <!--android:title="@string/action_settings"-->
     <!--app:showAsAction="never" />-->
     <item
-        android:id="@+id/serverSeek"
+        android:id="@+id/serverSearch"
         android:actionViewClass="android.widget.SearchView"
         android:icon="@drawable/abc_ic_search_api_mtrl_alpha"
         android:title="搜索"
-        app:showAsAction="ifRoom|collapseActionView" />
+        app:showAsAction="collapseActionView|ifRoom" />
     <item
         android:id="@+id/serverRefresh"
         android:icon="@android:drawable/ic_popup_sync"
