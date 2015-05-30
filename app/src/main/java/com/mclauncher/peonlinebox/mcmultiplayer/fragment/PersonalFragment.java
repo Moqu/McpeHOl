@@ -9,8 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,7 +39,7 @@ public class PersonalFragment extends Fragment {
     private String mParam2;
 
     ImageView iv_personal;
-    LinearLayout linear_login, linear_name;
+    FrameLayout linear_login, linear_name;
     Button btn_login, btn_register;
     TextView tv_nick;
     RelativeLayout relative_myServer, relative_feedback, relative_version_update, relative_about, relative_logout;
@@ -91,8 +91,8 @@ public class PersonalFragment extends Fragment {
         iv_personal = (ImageView) getView().findViewById(R.id.iv_personal);
         tv_nick = (TextView) getView().findViewById(R.id.tv_nick);
 
-        linear_login = (LinearLayout) getView().findViewById(R.id.linear_login);
-        linear_name = (LinearLayout) getView().findViewById(R.id.linear_name);
+        linear_login = (FrameLayout) getView().findViewById(R.id.linear_login);
+        linear_name = (FrameLayout) getView().findViewById(R.id.linear_name);
 
         btn_login = (Button) getView().findViewById(R.id.btn_login);
         btn_register = (Button) getView().findViewById(R.id.btn_register);
@@ -155,12 +155,14 @@ public class PersonalFragment extends Fragment {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.btn_login:
-                    Toast.makeText(getActivity(), "登录成功", Toast.LENGTH_SHORT).show();
+                    Intent loginIntent = new Intent(getActivity(), RegisterActivity.class);
+                    loginIntent.putExtra("type", btn_login.getText());
+                    startActivityForResult(loginIntent,2);
                     break;
                 case R.id.btn_register:
-                    Toast.makeText(getActivity(), "注册成功", Toast.LENGTH_SHORT).show();
                     Intent registerIntent = new Intent(getActivity(), RegisterActivity.class);
-                    startActivity(registerIntent);
+                    registerIntent.putExtra("type", btn_register.getText());
+                    startActivityForResult(registerIntent,2);
                     break;
                 case R.id.relative_myServer:
                     Toast.makeText(getActivity(), "My服务器", Toast.LENGTH_SHORT).show();

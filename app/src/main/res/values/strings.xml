@@ -6,13 +6,38 @@
     <string name="title_survival">生存</string>
     <string name="title_minigames">小游戏</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="aty_register">注册</string>
+    <string name="aty_login">登录</string>
+    <string name="nick">昵称</string>
+    <string name="myServer">我的服务器</string>
+    <string name="help">帮助</string>
+    <string name="feedback">意见反馈</string>
+    <string name="versionUpdate">版本更新</string>
+    <string name="about">关于我们</string>
+    <string name="logout">退出登录</string>
 
+    <string name="aty_close">关闭</string>
+
+    <string name="aty_back">上一步</string>
+    <string name="input_account">账号:</string>
+    <string name="input_password">密码:</string>
+    <string name="input_password_again">确认密码:</string>
+    <string name="input_code">验证码:</string>
+    <string name="input_hint_account">账号只能由20字符内数字/字母/组成</string>
+    <string name="input_hint_password">请输入密码(支持字符,.?!@#)</string>
+    <string name="input_hint_code">请输入验证码</string>
+    <string name="input_password_again_hint">请再次输入密码</string>
+    <string name="next">下一步</string>
+    <string name="input_player_nick_hint">请输入昵称</string>
+    <string name="input_player_nick">昵称:</string>
+    <string name="register_done">完成</string>
+    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_mobile">MobileActivity</string>
     <string name="title_activity_test">TestActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
+
 </resources>
