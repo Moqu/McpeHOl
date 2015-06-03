@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+    }
     compileSdkVersion 22
     buildToolsVersion "21.1.2"
     defaultConfig {
@@ -18,6 +20,7 @@ android {
     }
     productFlavors {
     }
+
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -26,4 +29,6 @@ dependencies {
     compile project(':viewpagerindicator')
     compile files('libs/android-async-http-1.4.6.jar')
     compile files('libs/gson-2.2.4.jar')
+    compile files('libs/mta-sdk-1.6.2.jar')
+    compile files('libs/open_sdk_r5043.jar')
 }

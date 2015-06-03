@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">McMultiplayer</string>
 
+    <string name="game">游戏</string>
+    <string name="personal_center">个人中心</string>
     <string name="title_recommend">推荐</string>
     <string name="title_challenge">挑战</string>
     <string name="title_survival">生存</string>
@@ -10,6 +12,7 @@
     <string name="aty_login">登录</string>
     <string name="nick">昵称</string>
     <string name="myServer">我的服务器</string>
+    <string name="passwordChange">密码修改</string>
     <string name="help">帮助</string>
     <string name="feedback">意见反馈</string>
     <string name="versionUpdate">版本更新</string>
@@ -39,5 +42,6 @@
     <string name="title_activity_mobile">MobileActivity</string>
     <string name="title_activity_test">TestActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
 
 </resources>

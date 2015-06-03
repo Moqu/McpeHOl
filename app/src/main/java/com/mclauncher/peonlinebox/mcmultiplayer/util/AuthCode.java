@@ -5,7 +5,7 @@ import android.widget.TextView;
 public class AuthCode {
 
     public static void authCodes(final TextView tvCode){
-        String url = "http://192.168.1.100/tools/Code.php";
+        String url = "http://192.168.1.103/tools/Code.php";
         RequestUtils.clientGet(url, new NetCallBack() {
             @Override
             public void myOnSuccess(String str) {

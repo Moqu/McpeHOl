@@ -1,7 +1,8 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.mclauncher.peonlinebox.mcmultiplayer.RegisterActivity">
 
     <LinearLayout
@@ -78,6 +79,26 @@
                 android:layout_height="fill_parent"
                 android:visibility="gone" />
         </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="选择其他登录方式" />
+            <ImageView
+                android:id="@+id/iv_qq_login"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/person_icon"/>
+        </LinearLayout>
+
+
     </LinearLayout>
 
     <FrameLayout
@@ -85,7 +106,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:visibility="gone">
-
     </FrameLayout>
 
-</FrameLayout>
+
+</LinearLayout>

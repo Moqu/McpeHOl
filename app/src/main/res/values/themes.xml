@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="CustomActionBarTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-        <item name="android:actionBarStyle">@style/CustomBackground</item>
+    <style name="CustomActionBarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="actionBarStyle">@style/CustomBackground</item>
     </style>
 
-    <style name="CustomBackground" parent="android:Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@drawable/settings_item_bg</item>
+    <style name="CustomBackground" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="background">@drawable/action_mode_background</item>
     </style>
 </resources>

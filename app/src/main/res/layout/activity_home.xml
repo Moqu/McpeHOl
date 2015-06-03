@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@drawable/person_background"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:paddingBottom="52.0dip">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <com.viewpagerindicator.TabPageIndicator
             android:id="@+id/tabs"
             style="@style/Widget.TabPageIndicator"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
 
         <FrameLayout
             android:layout_width="fill_parent"
             android:layout_height="0.0dip"
-            android:layout_weight="1.0">
+            android:layout_weight="1">
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/view_pager"
@@ -40,30 +43,81 @@
     <LinearLayout
         android:id="@+id/main_tab_group"
         android:layout_width="fill_parent"
-        android:layout_height="52.0dip"
-        android:layout_gravity="bottom"
-        android:background="@drawable/downbar"
-        android:gravity="bottom"
-        android:orientation="horizontal"
-        android:paddingTop="1.0dip">
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <CheckBox
-            android:id="@+id/main_tab_online_games"
-            style="@style/TabButton"
-            android:drawableTop="@drawable/tab_home"
-            android:text="游戏" />
+        <LinearLayout
+            android:id="@+id/linear_home"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_home_linear_normal"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/tab_home" />
+
+            <TextView
+                android:id="@+id/tv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:text="@string/game"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_personal_center"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_home_linear_normal"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/tab_personal_center_normal" />
+
+            <TextView
+                android:id="@+id/tv_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:text="@string/personal_center"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
 
         <!--<CheckBox-->
-            <!--android:id="@+id/main_tab_tools"-->
+            <!--android:id="@+id/main_tab_online_games"-->
             <!--style="@style/TabButton"-->
-            <!--android:drawableTop="@drawable/tab_find_frd"-->
-            <!--android:text="工具" />-->
+            <!--android:drawableLeft="@drawable/tab_home"-->
+            <!--android:text="游戏"-->
+            <!--android:visibility="gone" />-->
 
-        <CheckBox
-            android:id="@+id/main_tab_personal_center"
-            style="@style/TabButton"
-            android:drawableTop="@drawable/tab_personal_center"
-            android:text="个人中心" />
+        <!--&lt;!&ndash;<CheckBox&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/main_tab_tools"&ndash;&gt;-->
+        <!--&lt;!&ndash;style="@style/TabButton"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:drawableTop="@drawable/tab_find_frd"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:text="工具" />&ndash;&gt;-->
+
+        <!--<CheckBox-->
+            <!--android:id="@+id/main_tab_personal_center"-->
+            <!--style="@style/TabButton"-->
+            <!--android:drawableLeft="@drawable/tab_personal_center"-->
+            <!--android:text="个人中心"-->
+            <!--android:visibility="gone" />-->
     </LinearLayout>
 
-</FrameLayout>
+</LinearLayout>

@@ -1,24 +1,27 @@
 package com.mclauncher.peonlinebox.mcmultiplayer.fragment;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mclauncher.peonlinebox.mcmultiplayer.MobileActivity;
+import com.mclauncher.peonlinebox.mcmultiplayer.AboutActivity;
 import com.mclauncher.peonlinebox.mcmultiplayer.OnFragmentInteractionListener;
 import com.mclauncher.peonlinebox.mcmultiplayer.R;
 import com.mclauncher.peonlinebox.mcmultiplayer.RegisterActivity;
+import com.mclauncher.peonlinebox.mcmultiplayer.util.ToastUtils;
+import com.mclauncher.peonlinebox.mcmultiplayer.view.CheckUpdateDialog;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,15 +37,17 @@ public class PersonalFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private static final int LOGIN_tREQUEST_CODE = 2;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    ImageView iv_personal;
-    FrameLayout linear_login, linear_name;
-    Button btn_login, btn_register;
-    TextView tv_nick;
-    RelativeLayout relative_myServer, relative_feedback, relative_version_update, relative_about, relative_logout;
+    public static ImageView iv_personal;
+    public static FrameLayout linear_login, linear_name;
+    public static TextView tv_nick, tv_login, tv_register;
+    public static RelativeLayout relative_myServer, relative_password_change, relative_feedback, relative_version_update, relative_about, relative_logout;
+    public static RelativeLayout relative_login, relative_register;
 
     private OnFragmentInteractionListener mListener;
 
@@ -63,7 +68,6 @@ public class PersonalFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
     public PersonalFragment() {
         // Required empty public constructor
     }
@@ -90,28 +94,136 @@ public class PersonalFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         iv_personal = (ImageView) getView().findViewById(R.id.iv_personal);
         tv_nick = (TextView) getView().findViewById(R.id.tv_nick);
+        tv_login = (TextView) getView().findViewById(R.id.tv_login);
+        tv_register = (TextView) getView().findViewById(R.id.tv_register);
 
         linear_login = (FrameLayout) getView().findViewById(R.id.linear_login);
         linear_name = (FrameLayout) getView().findViewById(R.id.linear_name);
 
-        btn_login = (Button) getView().findViewById(R.id.btn_login);
-        btn_register = (Button) getView().findViewById(R.id.btn_register);
-
-        btn_login.setOnClickListener(onClickListener);
-        btn_register.setOnClickListener(onClickListener);
+        relative_login = (RelativeLayout) getView().findViewById(R.id.relative_login);
+        relative_register = (RelativeLayout) getView().findViewById(R.id.relative_register);
 
         relative_myServer = (RelativeLayout) getView().findViewById(R.id.relative_myServer);
+        relative_password_change = (RelativeLayout) getView().findViewById(R.id.relative_password_change);
         relative_feedback = (RelativeLayout) getView().findViewById(R.id.relative_feedback);
         relative_version_update = (RelativeLayout) getView().findViewById(R.id.relative_version_update);
         relative_about = (RelativeLayout) getView().findViewById(R.id.relative_about);
         relative_logout = (RelativeLayout) getView().findViewById(R.id.relative_logout);
 
+        relative_login.setOnClickListener(onClickListener);
+        relative_register.setOnClickListener(onClickListener);
         relative_myServer.setOnClickListener(onClickListener);
+        relative_password_change.setOnClickListener(onClickListener);
         relative_feedback.setOnClickListener(onClickListener);
         relative_version_update.setOnClickListener(onClickListener);
         relative_about.setOnClickListener(onClickListener);
         relative_logout.setOnClickListener(onClickListener);
 
+    }
+
+    View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.relative_login:
+                    Intent loginIntent = new Intent(getActivity(), RegisterActivity.class);
+                    loginIntent.putExtra("type", tv_login.getText());
+                    startActivityForResult(loginIntent, LOGIN_tREQUEST_CODE);
+                    break;
+                case R.id.relative_register:
+                    Intent registerIntent = new Intent(getActivity(), RegisterActivity.class);
+                    registerIntent.putExtra("type", tv_register.getText());
+                    startActivityForResult(registerIntent, LOGIN_tREQUEST_CODE);
+                    break;
+                case R.id.relative_myServer:
+                    Toast.makeText(getActivity(), "My服务器", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.relative_password_change:
+                    Toast.makeText(getActivity(), "密码修改", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.relative_feedback:
+                    Toast.makeText(getActivity(), "反馈建议", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.relative_version_update:
+                    if (true){
+                        CheckUpdateDialog.Builder builder = new CheckUpdateDialog.Builder(getActivity());
+                        builder.setMessage("检测到新版本，是否更新！");
+                        builder.setTitle("版本更新");
+                        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                        builder.setProgressBarPrice(50, true, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                
+                            }
+                        });
+
+                        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                        builder.create().show();
+                    } else {
+                        ToastUtils.toast(getActivity(),"当前已是最新版本！");
+                    }
+                    break;
+                case R.id.relative_about:
+                    Intent aboutIntent = new Intent(getActivity(), AboutActivity.class);
+                    startActivity(aboutIntent);
+                    break;
+                case R.id.relative_logout:
+                    if (!tv_nick.getText().equals(getString(R.string.nick))) {
+                        CheckUpdateDialog.Builder builder = new CheckUpdateDialog.Builder(getActivity());
+                        builder.setMessage("是否退出当前登录账号？");
+                        builder.setTitle("版本更新");
+                        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                logout();
+                                dialog.dismiss();
+                            }
+                        });
+                        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+
+
+                        builder.create().show();
+                    } else {
+                        ToastUtils.toast(getActivity(),"当前未登录账号！");
+                    }
+                    break;
+            }
+        }
+    };
+
+    Thread thread = new Thread(){
+        @Override
+        public void run() {
+            try {
+                while (true){
+                    i++;
+                    Thread.sleep(100);
+                }
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
+    private int i = 0;
+
+    private void logout(){
+        linear_login.setVisibility(View.VISIBLE);
+        linear_name.setVisibility(View.GONE);
+        tv_nick.setText("昵称");
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -138,50 +250,24 @@ public class PersonalFragment extends Fragment {
         mListener = null;
     }
 
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-
-    View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.btn_login:
-                    Intent loginIntent = new Intent(getActivity(), RegisterActivity.class);
-                    loginIntent.putExtra("type", btn_login.getText());
-                    startActivityForResult(loginIntent,2);
-                    break;
-                case R.id.btn_register:
-                    Intent registerIntent = new Intent(getActivity(), RegisterActivity.class);
-                    registerIntent.putExtra("type", btn_register.getText());
-                    startActivityForResult(registerIntent,2);
-                    break;
-                case R.id.relative_myServer:
-                    Toast.makeText(getActivity(), "My服务器", Toast.LENGTH_SHORT).show();
-                    break;
-                case R.id.relative_feedback:
-                    Toast.makeText(getActivity(), "反馈建议", Toast.LENGTH_SHORT).show();
-                    break;
-                case R.id.relative_version_update:
-                    Toast.makeText(getActivity(), "版本更新", Toast.LENGTH_SHORT).show();
-                    break;
-                case R.id.relative_about:
-                    Toast.makeText(getActivity(), "关于我们", Toast.LENGTH_SHORT).show();
-                    break;
-                case R.id.relative_logout:
-                    Toast.makeText(getActivity(), "注销登录", Toast.LENGTH_SHORT).show();
-                    Intent mobileIntent = new Intent(getActivity(), MobileActivity.class);
-                    startActivity(mobileIntent);
-                    break;
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 2) {
+            if (resultCode == 2) {
+                if (data!=null) {
+                    Bundle bundle = data.getExtras();
+                    String nickName = bundle.getString("nickName");
+                    String playerIcon = bundle.getString("playerIcon");
+                    if (nickName != null && playerIcon != null) {
+                        linear_login.setVisibility(View.GONE);
+                        linear_name.setVisibility(View.VISIBLE);
+                        tv_nick.setText(nickName);
+                    }
+                }else {
+                    Log.e("login", "null");
+                }
             }
         }
-    };
+    }
 }

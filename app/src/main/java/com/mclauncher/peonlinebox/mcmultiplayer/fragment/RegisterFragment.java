@@ -145,7 +145,7 @@ public class RegisterFragment extends Fragment {
             tv_register_code_warn.setVisibility(View.GONE);
             RequestParams params = new RequestParams();
             params.add("account", account);
-            RequestUtils.clientPost("http://192.168.1.100/tools/ImgUpload.php", params, new NetCallBack() {
+            RequestUtils.clientPost("http://192.168.1.103/tools/ImgUpload.php", params, new NetCallBack() {
                 @Override
                 public void myOnSuccess(String str) {
                     if (str.equalsIgnoreCase("true")) {

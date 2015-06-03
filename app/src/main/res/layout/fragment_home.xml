@@ -54,10 +54,4 @@
                 android:visibility="gone"></ListView>
         </LinearLayout>
     </ScrollView>
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="52.0dip"
-        android:layout_gravity="bottom"
-        android:gravity="bottom"
-        android:paddingTop="1.0dip"/>
 </LinearLayout>

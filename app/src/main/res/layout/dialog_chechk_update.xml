@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/dialog_update_bg"
+    android:clickable="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="258.0dip"
+        android:layout_height="178.0dip"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="39.0dip"
+            android:background="@drawable/dialog_update_title_bg"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/dialog_title"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/dialog_quit"
+                android:layout_width="14.0dip"
+                android:layout_height="14.0dip"
+                android:layout_marginRight="9dip"
+                android:layout_marginTop="6.5dip"
+                android:background="@drawable/dialog_update_quit"
+                android:gravity="left" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="fill_parent"
+            android:layout_height="102.5dip"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:id="@+id/message"
+                style="@style/dialog_message"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14.0dip"
+                android:layout_marginLeft="9.0dip"
+                android:layout_marginRight="9.0dip"
+                android:max="100"
+                android:maxHeight="12.0px"
+                android:minHeight="12.0px"
+                android:progress="50"
+                android:progressDrawable="@drawable/progressbar_drawable"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="bottom"
+            android:background="@drawable/dialog_update_title_button"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/positiveButton"
+                style="@style/dialog_button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gz_bg_kk_button_left_selector"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/negativeButton"
+                style="@style/dialog_button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gz_bg_kk_button_right_selector"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>  

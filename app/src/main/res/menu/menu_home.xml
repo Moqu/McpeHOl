@@ -7,11 +7,6 @@
         android:icon="@drawable/tab_home"
         android:title="开始游戏"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
 </menu>
 
 

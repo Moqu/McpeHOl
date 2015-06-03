@@ -73,7 +73,7 @@ public class IconCrop {
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
         params.add("img", img);
-        client.post("http://192.168.1.100/tools/ImgUpload.php", params, new AsyncHttpResponseHandler() {
+        client.post("http://192.168.1.103/tools/ImgUpload.php", params, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int i, Header[] headers, byte[] bytes) {
                 ToastUtils.toast(context, "上传成功");
